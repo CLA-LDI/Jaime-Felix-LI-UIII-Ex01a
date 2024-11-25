@@ -53,6 +53,14 @@ Principal		PROC
 				MOV		R10, 0
 				CALL	WriteConsoleW
 
+				; Salto de línea
+				MOV		RCX, ManejadorS
+				LEA		RDX, SaltoLinea
+				MOV		R8, LENGTHOF SaltoLinea
+				LEA		R9, Caracteres
+				MOV		R10, 0
+				CALL	WriteConsoleW
+
 				; Mostrar el total de pares de Arreglo1
 				; Mostrar salto de línea
 				; Mostrar el total de impares de Arreglo1
@@ -70,6 +78,14 @@ Principal		PROC
 				MOV		RCX, ManejadorS
 				LEA		RDX, StrArr02
 				MOV		R8, LENGTHOF StrArr02
+				LEA		R9, Caracteres
+				MOV		R10, 0
+				CALL	WriteConsoleW
+
+				; Salto de línea
+				MOV		RCX, ManejadorS
+				LEA		RDX, SaltoLinea
+				MOV		R8, LENGTHOF SaltoLinea
 				LEA		R9, Caracteres
 				MOV		R10, 0
 				CALL	WriteConsoleW
@@ -101,7 +117,7 @@ ContarPares		PROC
 				; Marco de pila. Guardar los registro a utilizar en el procedimiento
 				
 				; 
-				; Ciclo para contar los elementos positivos del arreglo
+				; Ciclo para contar los elementos pares del arreglo
 				MOV		RSI, RCX			; Primer argumento
 				MOV		RCX, RDX			; Segundo aegumento
 
